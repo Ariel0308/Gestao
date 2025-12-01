@@ -6,3 +6,4 @@ mongoose.connect('mongodb+srv://arielsadetsky_db_user:5wzPwmsbNkTmMfqT@cluster0.
 })
 .then(() => console.log('Conectado ao MongoDB'))
 .catch(err => console.log('Erro de conexão:', err));
+
