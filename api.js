@@ -5,7 +5,8 @@ import authRoutes from './Routers/authRouter.js';
 import categoryRoutes from './Routers/categoryRouter.js';
 import productRoutes from './Routers/productRouter.js';
 
-const mongoUri = process.env.MONGODB_URI ?? 'mongodb+srv://arielsadetsky_db_user:5wzPwmsbNkTmMfqT@cluster0.hs96ai5.mongodb.net/?appName=Cluster0';
+const defaultMongoUri = 'mongodb://gestao_root:gestao_secret@localhost:27017/gestao?authSource=admin';
+const mongoUri = process.env.MONGODB_URI ?? defaultMongoUri;
 
 mongoose.connect(mongoUri)
 .then(() => console.log('Conectado ao MongoDB'))
