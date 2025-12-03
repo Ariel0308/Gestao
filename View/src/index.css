@@ -1,0 +1,24 @@
+@import './styles/theme.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  background-color: var(--color-dark);
+  color: var(--color-offwhite);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

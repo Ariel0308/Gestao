@@ -1,0 +1,19 @@
+:root {
+  --color-purple: #7250C7;
+  --color-orange: #FD985A;
+  --color-offwhite: #F4EEFF;
+  --color-dark: #2D2A32;
+
+  --radius-soft: 16px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+}
+
+body {
+  background-color: var(--color-dark);
+  color: var(--color-offwhite);
+}

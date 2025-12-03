@@ -4,7 +4,7 @@ const getAllProducts = async (req, res) => {
     const {categoryId} = req.params;      
     
     try {
-        const products = await Produto.find({ id_categoria: categoryId }).populate('id_categoria');
+        const products = await Produto.find({ id_categoria: categoryId }).select('nome preco image_url');
         res.status(200).json(products);
     } catch (error) {
         res.status(500).json({ message: 'Erro no servidor', error: error.message });
