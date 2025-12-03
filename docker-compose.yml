@@ -1,0 +1,14 @@
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: gestao-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: gestao_root
+      MONGO_INITDB_ROOT_PASSWORD: gestao_secret
+      MONGO_INITDB_DATABASE: gestao
+    volumes:
+      - ./docker-data/mongo:/data/db
+

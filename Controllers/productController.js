@@ -1,4 +1,4 @@
-import Produto from "../Models/Produto";
+import Produto from "../Models/Produto.js";
 
 const getAllProducts = async (req, res) => {
     const {categoryId} = req.params;      
@@ -25,4 +25,4 @@ const getProduct = async (req, res) => {
     }
 }
 
-module.exports = { getAllProducts, getProduct };
+export default { getAllProducts, getProduct };

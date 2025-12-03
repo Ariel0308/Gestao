@@ -1,4 +1,4 @@
-import Categoria from "../Models/Categoria";
+import Categoria from "../Models/Categoria.js";
 
 const getCategories = async (req, res) => {    
     try {
@@ -10,4 +10,4 @@ const getCategories = async (req, res) => {
 }
 
 
-module.exports = { getCategories };
+export default { getCategories };
