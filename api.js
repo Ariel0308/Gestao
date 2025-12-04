@@ -2,7 +2,7 @@ import 'dotenv/config';
 import mongoose from 'mongoose';
 import app from './app.js';
 
-const defaultMongoUri = 'mongodb://gestao_root:gestao_secret@localhost:27017/gestao?authSource=admin';
+const defaultMongoUri = 'mongodb://gestao_root:gestao_secret@localhost:27018/gestao?authSource=admin';
 const mongoUri = process.env.MONGODB_URI ?? defaultMongoUri;
 
 const port = process.env.PORT || 5000;

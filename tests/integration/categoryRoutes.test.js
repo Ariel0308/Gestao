@@ -73,6 +73,46 @@ describe('Category routes', () => {
       subcategorias: ['jeans', 'sarja'],
     });
   });
+
+  it('updates categories with normalization when admin is authenticated', async () => {
+    const updated = { _id: '123', nome: 'Acessórios' };
+    categoriaModelMock.findByIdAndUpdate.mockResolvedValue(updated);
+
+    const response = await request(app)
+      .put('/api/categories/123')
+      .set('Authorization', `Bearer ${adminToken()}`)
+      .send({
+        nome: 'Acessórios',
+        descricao: 'Itens extras',
+        subcategorias: 'lenços,  chapéus ',
+      });
+
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual(updated);
+    expect(categoriaModelMock.findByIdAndUpdate).toHaveBeenCalledWith(
+      '123',
+      {
+        nome: 'Acessórios',
+        slug: 'acessorios',
+        descricao: 'Itens extras',
+        image: '',
+        subcategorias: ['lenços', 'chapéus'],
+      },
+      { new: true, runValidators: true },
+    );
+  });
+
+  it('deletes categories when admin is authenticated', async () => {
+    categoriaModelMock.findByIdAndDelete.mockResolvedValue({ _id: '123' });
+
+    const response = await request(app)
+      .delete('/api/categories/123')
+      .set('Authorization', `Bearer ${adminToken()}`);
+
+    expect(response.status).toBe(204);
+    expect(response.body).toEqual({});
+    expect(categoriaModelMock.findByIdAndDelete).toHaveBeenCalledWith('123');
+  });
 });
 
 

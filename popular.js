@@ -8,7 +8,7 @@ import User from './Models/User.js';
 import Movimento from './Models/Movimento.js';
 import Acessorio from './Models/Acessorio.js';
 
-const defaultMongoUri = 'mongodb://gestao_root:gestao_secret@localhost:27017/gestao?authSource=admin';
+const defaultMongoUri = 'mongodb://gestao_root:gestao_secret@localhost:27018/gestao?authSource=admin';
 const mongoUri = process.env.MONGODB_URI ?? defaultMongoUri;
 
 const categorySeeds = [
